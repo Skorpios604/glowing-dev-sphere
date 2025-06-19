@@ -1,7 +1,6 @@
 
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, Box, Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
 function FloatingGeometry({ position, color, type = 'sphere' }: { 
@@ -19,11 +18,20 @@ function FloatingGeometry({ position, color, type = 'sphere' }: {
     }
   });
 
+  const getGeometry = () => {
+    switch (type) {
+      case 'box':
+        return <boxGeometry args={[0.8, 0.8, 0.8]} />;
+      case 'torus':
+        return <torusGeometry args={[0.5, 0.2, 16, 32]} />;
+      default:
+        return <sphereGeometry args={[0.5, 32, 32]} />;
+    }
+  };
+
   return (
     <mesh ref={meshRef} position={position}>
-      {type === 'sphere' && <Sphere args={[0.5, 32, 32]} />}
-      {type === 'box' && <Box args={[0.8, 0.8, 0.8]} />}
-      {type === 'torus' && <Torus args={[0.5, 0.2, 16, 32]} />}
+      {getGeometry()}
       <meshStandardMaterial 
         color={color} 
         transparent 
