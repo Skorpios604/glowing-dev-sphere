@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -44,10 +43,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient cursor-pointer"
+            className="text-2xl font-bold cursor-pointer"
             onClick={() => handleNavClick('#')}
           >
-            Monzer Mourad
+            <span className="text-gradient neon-flicker">Monzer</span> <span className="text-gradient neon-flicker">Mourad</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -58,7 +57,7 @@ export default function Navigation() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleNavClick(item.href)}
-                className="text-gray-300 hover:text-white transition-colors relative group"
+                className="text-white transition-colors relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
@@ -93,7 +92,7 @@ export default function Navigation() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left py-3 text-gray-300 hover:text-white transition-colors"
+                className="block w-full text-left py-3 text-white transition-colors"
               >
                 {item.name}
               </motion.button>

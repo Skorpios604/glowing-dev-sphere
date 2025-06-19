@@ -1,36 +1,50 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const skills = [
-  { name: 'JavaScript', color: '#F7DF1E', icon: 'JS' },
-  { name: 'TypeScript', color: '#3178C6', icon: 'TS' },
-  { name: 'React', color: '#61DAFB', icon: '⚛️' },
-  { name: 'Next.js', color: '#ffffff', icon: '▲' },
-  { name: 'Node.js', color: '#339933', icon: '⬢' },
-  { name: 'PostgreSQL', color: '#336791', icon: '🐘' },
-  { name: 'MongoDB', color: '#47A248', icon: '🍃' },
-  { name: 'Docker', color: '#2496ED', icon: '🐳' },
-  { name: 'Tailwind CSS', color: '#06B6D4', icon: '💨' },
-  { name: 'GitHub', color: '#ffffff', icon: '⚡' },
-  { name: 'Python', color: '#3776AB', icon: '🐍' },
-  { name: 'CSS3', color: '#1572B6', icon: '🎨' }
+  { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  { name: 'npm', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg' },
+  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+  { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+  { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'Bash', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg' },
+  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
+  { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+  { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+  { name: 'Vite', icon: 'https://skillicons.dev/icons?i=vite' },
 ];
 
 function SkillCard({ skill, index }: { skill: typeof skills[0], index: number }) {
+  const backgrounds = [
+    'rgba(20,20,20,0.92)',
+    'rgba(20,20,20,0.92)',
+    'rgba(20,20,20,0.92)',
+    'rgba(20,20,20,0.92)',
+    'rgba(20,20,20,0.92)',
+    'rgba(20,20,20,0.92)',
+  ];
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.05, rotateY: 5 }}
-      className="glass p-6 rounded-2xl text-center group hover:glow transition-all duration-300"
+      className="glass p-6 rounded-2xl text-center group hover:glow neon-border transition-all duration-300"
+      style={{ background: backgrounds[index % backgrounds.length] }}
     >
-      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 font-bold">
-        {skill.icon}
+      <div className="mb-4 flex justify-center items-center">
+        <img src={skill.icon} alt={skill.name + ' logo'} height={40} width={40} style={{ filter: 'drop-shadow(0 0 8px #a259ff)' }} />
       </div>
-      <h3 className="text-lg font-semibold" style={{ color: skill.color }}>
+      <h3 className="text-lg font-semibold text-gradient">
         {skill.name}
       </h3>
     </motion.div>

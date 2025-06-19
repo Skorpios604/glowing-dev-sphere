@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -42,9 +41,9 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-6">
-            About <span className="text-gradient">Me</span>
+            <span className="text-gradient neon-flicker">About</span> <span className="text-gradient neon-flicker">Me</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ">
             I'm a passionate Full Stack Developer based in beautiful Vancouver, Canada. 
             I specialize in maintaining and enhancing web applications using modern technologies 
             like JavaScript, TypeScript, Next.js, Node.js, and more. With a strong foundation 
@@ -61,10 +60,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="glass p-8 rounded-2xl text-center group hover:glow transition-all duration-300"
+              className={`glass p-8 rounded-2xl text-center group hover:glow neon-border transition-all duration-300`} 
+              style={{ background: 'rgba(20,20,20,0.92)' }}
             >
               <div className="mb-6">
-                <feature.icon className="w-12 h-12 mx-auto text-blue-400 group-hover:text-purple-400 transition-colors duration-300" />
+                <feature.icon className="w-12 h-12 mx-auto text-gradient group-hover:glow transition-colors duration-300" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gradient">
                 {feature.title}

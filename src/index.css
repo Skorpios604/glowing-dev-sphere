@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 300 100% 5%;
-    --foreground: 300 20% 98%;
+    --background: 265 80% 8%; /* deep purple */
+    --foreground: 0 0% 100%;
 
-    --card: 300 100% 8%;
-    --card-foreground: 300 20% 98%;
+    --card: 265 60% 12%; /* slightly lighter purple */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 300 100% 8%;
-    --popover-foreground: 300 20% 98%;
+    --popover: 265 60% 14%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 300 100% 70%;
-    --primary-foreground: 300 100% 10%;
+    --primary: 300 100% 60%; /* neon magenta */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 100% 20%;
-    --secondary-foreground: 300 20% 98%;
+    --secondary: 190 100% 60%; /* neon cyan */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 280 50% 15%;
-    --muted-foreground: 300 20% 65%;
+    --muted: 260 40% 20%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 320 100% 60%;
-    --accent-foreground: 300 20% 98%;
+    --accent: 260 100% 70%; /* electric blue */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 300 20% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 300 50% 30%;
-    --input: 300 50% 20%;
-    --ring: 300 100% 70%;
+    --border: 300 100% 40%; /* magenta border */
+    --input: 265 60% 18%;
+    --ring: 300 100% 60%;
   }
 }
 
@@ -46,12 +45,14 @@
     @apply text-white;
     overflow-x: hidden;
     background: 
-      radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(128, 0, 255, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(255, 0, 255, 0.2) 0%, transparent 50%),
-      linear-gradient(135deg, #0a0015 0%, #1a0033 25%, #2d0066 50%, #3d0099 75%, #4a00cc 100%);
+      radial-gradient(circle at 20% 80%, rgba(50, 3, 61, 0.28) 0%, transparent 10%),
+      radial-gradient(circle at 80% 20%, rgba(30, 4, 41, 0.18) 0%, transparent 10%),
+      radial-gradient(circle at 40% 40%, rgba(54, 5, 73, 0.18) 0%, transparent 10%),
+      linear-gradient(135deg, #3f044b 0%, #06000c 50%, #210236 100%);
     min-height: 100vh;
     position: relative;
+    box-shadow: 0 0 60px 10px #ff00cc33, 0 0 120px 30px #00fff722;
+    border: 2px solid rgba(255,0,204,0.15);
   }
 
   body::before {
@@ -66,13 +67,13 @@
         90deg,
         transparent,
         transparent 98px,
-        rgba(255, 0, 128, 0.03) 100px
+        rgba(0, 255, 247, 0.04) 100px
       ),
       repeating-linear-gradient(
         0deg,
         transparent,
         transparent 98px,
-        rgba(128, 0, 255, 0.03) 100px
+        rgba(255, 0, 204, 0.04) 100px
       );
     pointer-events: none;
     z-index: 1;
@@ -81,7 +82,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #ff0080 0%, #ff00ff 25%, #8000ff 50%, #ff0080 75%, #ff00ff 100%);
+    background: linear-gradient(90deg, #ff00cc 0%, #00fff7 50%, #3a86ff 100%);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -91,32 +92,32 @@
   
   .glow {
     box-shadow: 
-      0 0 20px rgba(255, 0, 128, 0.8), 
-      0 0 40px rgba(255, 0, 128, 0.6),
-      0 0 80px rgba(255, 0, 255, 0.4),
-      inset 0 0 20px rgba(255, 0, 128, 0.1);
+      0 0 24px 4px #a259ffcc, 
+      0 0 48px 8px #a259ff99,
+      0 0 80px 16px #a259ff66,
+      inset 0 0 20px #a259ff22;
   }
   
   .glass {
     background: linear-gradient(135deg, 
-      rgba(255, 0, 128, 0.1) 0%, 
-      rgba(128, 0, 255, 0.1) 50%, 
-      rgba(255, 0, 255, 0.1) 100%
+      rgba(40, 0, 60, 0.7) 0%, 
+      rgba(0, 255, 247, 0.08) 100%
     );
-    backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 0, 128, 0.3);
+    backdrop-filter: blur(18px) saturate(180%);
+    border: 1.5px solid rgba(255, 0, 204, 0.25);
     box-shadow: 
-      0 8px 32px rgba(255, 0, 128, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 8px 32px #00fff722,
+      inset 0 1px 0 #ff00cc22;
   }
   
   .neon-border {
-    border: 2px solid transparent;
-    background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(128, 0, 255, 0.1)) padding-box,
-                linear-gradient(135deg, #ff0080, #8000ff, #ff00ff) border-box;
+    border: 2.5px solid transparent;
+    background: linear-gradient(135deg, rgba(255, 0, 204, 0.18), rgba(0, 255, 247, 0.18)) padding-box,
+                linear-gradient(90deg, #ff00cc, #00fff7, #3a86ff) border-box;
     box-shadow: 
-      0 0 20px rgba(255, 0, 128, 0.5),
-      inset 0 0 20px rgba(255, 0, 128, 0.1);
+      0 0 24px #ff00cc88,
+      0 0 32px #00fff744,
+      inset 0 0 20px #3a86ff22;
   }
   
   .floating {
@@ -130,9 +131,35 @@
 
   .cyberpunk-grid {
     background-image: 
-      linear-gradient(rgba(255, 0, 128, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 0, 128, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(rgba(0, 255, 247, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 204, 0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+  }
+  .cyberpunk-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+      linear-gradient(0deg, rgba(255,0,180,0.45) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,0,180,0.45) 1px, transparent 1px);
+    background-size: 20px 20px;
+    filter: blur(4px) brightness(2) drop-shadow(0 0 12px #ff00b4) drop-shadow(0 0 16px #ff00b4);
+    opacity: 0.85;
+  }
+
+  .neon-cyberpunk {
+    box-shadow: 0 0 40px 5px #ff00cc66, 0 0 80px 20px #c435d144, 0 0 0 4px #f028df22;
+    border: 2px solid #ff00cc;
+    background: rgba(20, 0, 40, 0.7);
+    backdrop-filter: blur(6px) saturate(180%);
+  }
+
+  .glow-neon {
+    box-shadow: 0 0 16px 4px #ff00b4, 0 0 32px 8px #ff00b4, 0 0 24px 8px #e020e0;
+    filter: brightness(1.3) saturate(1.5);
   }
 }
 

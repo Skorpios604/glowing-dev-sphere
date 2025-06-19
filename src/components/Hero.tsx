@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail, Zap, Code } from 'lucide-react';
 
@@ -11,19 +10,18 @@ export default function Hero() {
         <div className="absolute inset-0 cyberpunk-grid opacity-30"></div>
         
         {/* Floating neon orbs */}
-        <div className="floating absolute top-20 left-10 w-6 h-6 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 blur-sm opacity-80"></div>
-        <div className="floating-delay absolute top-40 right-20 w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 blur-sm opacity-70"></div>
-        <div className="floating absolute bottom-40 left-20 w-4 h-4 rounded-full bg-gradient-to-r from-pink-500 to-red-500 blur-sm opacity-90"></div>
-        <div className="floating-delay absolute bottom-20 right-10 w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 blur-sm opacity-60"></div>
+        <div className="floating absolute top-20 left-10 w-3 h-3 rounded-full bg-gradient-to-r from-[#ff00cc] to-[#00fff7] glow-neon opacity-80"></div>
+        <div className="floating-delay absolute top-40 right-20 w-4 h-4 rounded-full bg-gradient-to-r from-[#00fff7] to-[#3a86ff] glow-neon opacity-70"></div>
+        <div className="floating absolute bottom-40 left-20 w-2 h-2 rounded-full bg-gradient-to-r from-[#3a86ff] to-[#ff00cc] glow-neon opacity-90"></div>
+        <div className="floating-delay absolute bottom-20 right-10 w-5 h-5 rounded-full bg-gradient-to-r from-[#a259ff] to-[#00fff7] glow-neon opacity-60"></div>
         
         {/* Additional geometric shapes */}
-        <div className="floating absolute top-1/3 left-1/4 w-12 h-12 border-2 border-pink-500 rotate-45 opacity-40"></div>
-        <div className="floating-delay absolute top-2/3 right-1/4 w-8 h-8 border-2 border-purple-500 rounded-full opacity-50"></div>
+        <div className="floating absolute top-1/3 left-1/4 w-6 h-6 border-2 border-[#ff00cc] rotate-45 glow-neon opacity-40"></div>
+        <div className="floating-delay absolute top-2/3 right-1/4 w-4 h-4 border-2 border-[#00fff7] rounded-full glow-neon opacity-50"></div>
         
         {/* Scanning lines */}
         <div className="absolute inset-0">
-          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent opacity-50 animate-pulse"></div>
-          <div className="absolute w-px h-full bg-gradient-to-b from-transparent via-purple-500 to-transparent opacity-30 left-1/3 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-[#ff00cc] to-transparent opacity-50 animate-pulse"></div>
         </div>
       </div>
 
@@ -42,23 +40,24 @@ export default function Hero() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <Zap className="w-4 h-4 text-pink-400" />
+              <Zap className="w-4 h-4 text-[#ff00cc]" />
               <span className="text-sm tracking-wider">FULL STACK DEVELOPER</span>
-              <Code className="w-4 h-4 text-purple-400" />
+              <Code className="w-4 h-4 text-[#a259ff]" />
             </motion.div>
           </div>
 
           <h1 className="text-7xl md:text-9xl font-black mb-6 leading-none">
             <motion.span 
-              className="text-gradient block neon-flicker"
+              className="text-gradient neon-flicker"
               initial={{ rotateX: 90 }}
               animate={{ rotateX: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
               MONZER
             </motion.span>
+            <br />
             <motion.span 
-              className="text-white block transform -skew-x-12"
+              className="text-gradient neon-flicker"
               initial={{ rotateX: -90 }}
               animate={{ rotateX: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -75,7 +74,7 @@ export default function Hero() {
           >
             Crafting <span className="text-gradient font-semibold">digital experiences</span> with cutting-edge tech
             <br />
-            <span className="text-pink-400">Vancouver, Canada</span>
+            <span className="text-[#00fff7] text-gradient neon-flicker">Vancouver, Canada</span>
           </motion.p>
         </motion.div>
 
@@ -97,7 +96,7 @@ export default function Hero() {
               <Github size={28} className="group-hover:text-pink-400 transition-colors" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/monzer-mourad"
+              href="https://www.linkedin.com/in/monzermourad/"
               target="_blank"
               rel="noopener noreferrer"
               className="glass neon-border p-5 rounded-full hover:glow transition-all duration-300 group"
@@ -105,14 +104,6 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Linkedin size={28} className="group-hover:text-purple-400 transition-colors" />
-            </motion.a>
-            <motion.a
-              href="mailto:your.email@example.com"
-              className="glass neon-border p-5 rounded-full hover:glow transition-all duration-300 group"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail size={28} className="group-hover:text-cyan-400 transition-colors" />
             </motion.a>
           </div>
           
@@ -122,8 +113,8 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-full blur-lg opacity-60 group-hover:opacity-80 transition-opacity"></div>
-            <div className="relative bg-gradient-to-r from-pink-600 to-purple-600 px-10 py-5 rounded-full text-lg font-bold tracking-wider uppercase hover:shadow-2xl transition-all duration-300 neon-border">
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full blur-lg opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <div className="relative bg-gradient-to-r from-pink-500 to-purple-600 px-10 py-5 rounded-full text-lg font-bold tracking-wider uppercase hover:shadow-2xl transition-all duration-300 neon-border">
               Enter The Matrix
             </div>
           </motion.button>
@@ -135,10 +126,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <div className="flex flex-col items-center">
-            <span className="text-xs tracking-widest text-gray-400 mb-2">SCROLL</span>
-            <ChevronDown className="w-6 h-6 text-pink-400 animate-bounce" />
-          </div>
+          {/* Removed SCROLL text and icon */}
         </motion.div>
       </div>
     </section>
