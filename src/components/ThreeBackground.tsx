@@ -4,7 +4,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, Box, Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
-function FloatingGeometry({ position, color, type = 'sphere' }: { position: [number, number, number], color: string, type?: string }) {
+function FloatingGeometry({ position, color, type = 'sphere' }: { 
+  position: [number, number, number], 
+  color: string, 
+  type?: string 
+}) {
   const meshRef = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
@@ -51,7 +55,12 @@ function Scene() {
 export default function ThreeBackground() {
   return (
     <div className="fixed inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        onCreated={({ gl }) => {
+          gl.setClearColor('#0f172a', 1);
+        }}
+      >
         <Scene />
       </Canvas>
     </div>
