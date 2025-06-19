@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -26,104 +26,40 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="glass p-12 rounded-2xl"
           >
-            <div className="glass p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-6 text-gradient">Get In Touch</h3>
+            <h3 className="text-3xl font-semibold mb-8 text-gradient text-center">Get In Touch</h3>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center">
+                <div className="glass p-4 rounded-full mb-4">
+                  <MapPin className="w-8 h-8 text-pink-400" />
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Location</h4>
+                <p className="text-gray-300">Vancouver, Canada</p>
+              </div>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="glass p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Location</p>
-                    <p className="text-gray-300">Vancouver, Canada</p>
-                  </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="glass p-4 rounded-full mb-4">
+                  <Mail className="w-8 h-8 text-purple-400" />
                 </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="glass p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Email</p>
-                    <p className="text-gray-300">monzer.mourad@example.com</p>
-                  </div>
+                <h4 className="text-xl font-semibold mb-2">Email</h4>
+                <p className="text-gray-300">monzer.mourad@example.com</p>
+              </div>
+              
+              <div className="flex flex-col items-center text-center">
+                <div className="glass p-4 rounded-full mb-4">
+                  <Phone className="w-8 h-8 text-blue-400" />
                 </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="glass p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-green-400" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Available</p>
-                    <p className="text-gray-300">Monday - Friday</p>
-                  </div>
-                </div>
+                <h4 className="text-xl font-semibold mb-2">Availability</h4>
+                <p className="text-gray-300">Monday - Friday</p>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="glass p-8 rounded-2xl"
-          >
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
-                  <input
-                    type="text"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Subject</label>
-                <input
-                  type="text"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors"
-                  placeholder="Project Discussion"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
-                <textarea
-                  rows={5}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400 transition-colors resize-none"
-                  placeholder="Tell me about your project..."
-                ></textarea>
-              </div>
-              
-              <motion.button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-2xl transition-all duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Send Message
-                <Send className="w-5 h-5" />
-              </motion.button>
-            </form>
           </motion.div>
         </div>
       </div>

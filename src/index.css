@@ -53,25 +53,26 @@
   body {
     @apply bg-slate-900 text-white;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #0a0612 0%, #1a0b2e 50%, #16213e 100%);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .glow {
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.6), 0 0 60px rgba(131, 56, 236, 0.4);
   }
   
   .glass {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 0, 110, 0.2);
   }
   
   .floating {
@@ -95,10 +96,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
   }
   50% {
-    box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+    box-shadow: 0 0 40px rgba(255, 0, 110, 0.8), 0 0 60px rgba(131, 56, 236, 0.6);
   }
 }
 

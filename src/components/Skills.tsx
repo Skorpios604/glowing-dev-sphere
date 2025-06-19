@@ -4,22 +4,18 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const skills = [
-  { name: 'JavaScript', color: '#F7DF1E', icon: '🟨' },
-  { name: 'TypeScript', color: '#3178C6', icon: '🔷' },
+  { name: 'JavaScript', color: '#F7DF1E', icon: 'JS' },
+  { name: 'TypeScript', color: '#3178C6', icon: 'TS' },
   { name: 'React', color: '#61DAFB', icon: '⚛️' },
-  { name: 'Next.js', color: '#000000', icon: '▲' },
-  { name: 'Node.js', color: '#339933', icon: '🟢' },
+  { name: 'Next.js', color: '#ffffff', icon: '▲' },
+  { name: 'Node.js', color: '#339933', icon: '⬢' },
   { name: 'PostgreSQL', color: '#336791', icon: '🐘' },
   { name: 'MongoDB', color: '#47A248', icon: '🍃' },
-  { name: 'Redis', color: '#DC382D', icon: '🔴' },
   { name: 'Docker', color: '#2496ED', icon: '🐳' },
   { name: 'Tailwind CSS', color: '#06B6D4', icon: '💨' },
-  { name: 'Material UI', color: '#007FFF', icon: '🎨' },
-  { name: 'Express', color: '#000000', icon: '🚀' },
-  { name: 'Redux', color: '#764ABC', icon: '🔄' },
-  { name: 'GitHub', color: '#181717', icon: '🐙' },
-  { name: 'Figma', color: '#F24E1E', icon: '🎯' },
-  { name: 'VS Code', color: '#007ACC', icon: '💻' }
+  { name: 'GitHub', color: '#ffffff', icon: '⚡' },
+  { name: 'Python', color: '#3776AB', icon: '🐍' },
+  { name: 'CSS3', color: '#1572B6', icon: '🎨' }
 ];
 
 function SkillCard({ skill, index }: { skill: typeof skills[0], index: number }) {
@@ -31,7 +27,7 @@ function SkillCard({ skill, index }: { skill: typeof skills[0], index: number })
       whileHover={{ scale: 1.05, rotateY: 5 }}
       className="glass p-6 rounded-2xl text-center group hover:glow transition-all duration-300"
     >
-      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 font-bold">
         {skill.icon}
       </div>
       <h3 className="text-lg font-semibold" style={{ color: skill.color }}>
