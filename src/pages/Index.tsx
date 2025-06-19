@@ -8,18 +8,27 @@ import Contact from '@/components/Contact';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
       <ThreeBackground />
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Contact />
-      
-      {/* Footer */}
-      <footer className="py-8 text-center text-gray-400 border-t border-gray-800">
-        <p>&copy; 2024 Monzer Mourad. Crafted with passion in Vancouver, Canada.</p>
-      </footer>
+      <div className="relative z-10">
+        <Navigation />
+        <Hero />
+        <About />
+        <Skills />
+        <Contact />
+        
+        {/* Footer */}
+        <footer className="py-12 text-center text-gray-400 border-t border-pink-800/30 glass mt-20">
+          <div className="container mx-auto px-6">
+            <p className="text-lg">
+              &copy; 2024 <span className="text-gradient font-semibold">Monzer Mourad</span>
+            </p>
+            <p className="text-sm mt-2 opacity-70">
+              Crafted with passion in <span className="text-pink-400">Vancouver, Canada</span>
+            </p>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 };
